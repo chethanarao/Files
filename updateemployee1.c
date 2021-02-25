@@ -5,14 +5,15 @@ struct emp
      char empname[10];
      char company[10];
      
-}emp1[10];
+}emp[10];
+struct emp emp1[10];
 
 int main()
 {
     int i,id;
     FILE *fp;
     fp=fopen("test","r+b");
-    printf("enter employee id to search\n");
+    printf("enter employee id to update\n");
     scanf("%d",&id);
      while((fread(&emp1[i],sizeof(emp1),1,fp)==1))
      {
@@ -24,11 +25,10 @@ int main()
                      scanf("%d %s %s",&emp1[i].empid,&emp1[i].empname,&emp1[i].company);
                      fseek(fp,sizeof(emp1[i])*i,SEEK_SET);
                      fwrite(&emp1[i],sizeof(emp1),1,fp);
-                     break;
+                    
                   }
            }
        }
-         
+     fclose(fp);
      printf("updated ");
-        fclose(fp);
     }
