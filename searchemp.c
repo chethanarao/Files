@@ -9,7 +9,7 @@ struct emp
 
 int main()
 {
-    int i,id;
+    int i,id;int flag;
     FILE *fp;
     fp=fopen("test","rb");
     printf("enter employee id to search\n");
@@ -25,6 +25,7 @@ int main()
                 printf("%s %s",emp1[i].empname,emp1[i].company);
             }
         }
+    }
         if(flag==0)
         {
             printf("not found");
