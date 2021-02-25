@@ -14,8 +14,6 @@ int main()
     fp=fopen("test","r+b");
     printf("enter employee id to search\n");
     scanf("%d",&id);
-    fseek(fp,0,SEEK_SET);
-    
      while(fread(&emp1[i],sizeof(emp1),1,fp)==1)
      {
           for(i=0;i<=3;i++)
