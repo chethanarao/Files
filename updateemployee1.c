@@ -14,7 +14,7 @@ int main()
     fp=fopen("test","r+b");
     printf("enter employee id to search\n");
     scanf("%d",&id);
-     while(fread(&emp1[i],sizeof(emp1),1,fp)==1)
+     while((fread(&emp1[i],sizeof(emp1),1,fp)==1))
      {
           for(i=0;i<=3;i++)
           {
