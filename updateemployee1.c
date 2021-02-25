@@ -11,7 +11,7 @@ int main()
 {
     int i,id;
     FILE *fp;
-    fp=fopen("test","rb");
+    fp=fopen("test","r+b");
     printf("enter employee id to search\n");
     scanf("%d",&id);
     fseek(fp,0,SEEK_SET);
@@ -20,10 +20,10 @@ int main()
      fread(&emp1[i],sizeof(emp1),1,fp);
             if(emp1[i].empid==id)
             {
-                printf("enter tthe new data\n");
+                printf("enter the new data\n");
                 scanf("%d %s %s",emp1[i].empid,emp1[i].empname,emp1[i].company);
                 fseek(fp,sizeof(emp1[i])*i,SEEK_SET);
-                fwrite(&emp1[i],sizeof(emp1[i]),1,fp);
+                fwrite(&emp1[i],sizeof(emp1),1,fp);
                 break;
             }
         }
