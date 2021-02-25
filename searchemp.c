@@ -23,6 +23,7 @@ int main()
                 flag=1;
                 printf("found");
                 printf("%s %s",emp1[i].empname,emp1[i].company);
+                 break;
             }
         }
     }
