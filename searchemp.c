@@ -16,7 +16,7 @@ int main()
     scanf("%d",&id);
     while(fread(&emp1[i],sizeof(emp1),1,fp)==1)
     {
-        for(i=0;i<3;i++)
+        for(i=0;i<=3;i++)
         {
             if(emp1[i].empid==id)
             {
@@ -30,4 +30,5 @@ int main()
         {
             printf("not found");
         }
+     fclose(fp);
     }
