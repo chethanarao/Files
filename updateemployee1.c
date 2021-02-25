@@ -21,7 +21,7 @@ int main()
             if(emp1[i].empid==id)
             {
                 printf("enter the new data\n");
-                scanf("%d %s %s",emp1[i].empid,emp1[i].empname,emp1[i].company);
+                scanf("%d %s %s",&emp1[i].empid,&emp1[i].empname,&emp1[i].company);
                 fseek(fp,sizeof(emp1[i])*i,SEEK_SET);
                 fwrite(&emp1[i],sizeof(emp1),1,fp);
                 break;
